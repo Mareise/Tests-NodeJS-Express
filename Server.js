@@ -35,6 +35,8 @@ app.get('/api/students/:studentId',
 				}).listen(8000);
 			});
 
+			res.send('grias de')
+
 			var options = {
 				i2c: i2cBus.openSync(1),
 				address: 0x40,
