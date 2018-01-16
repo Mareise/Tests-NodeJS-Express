@@ -11,10 +11,16 @@ app.get('/hello', function (req, res) {
 	res.send('Hello World!')
 })
 
+app.get('/Test/id/:Id', function(req, res) {
+	res.sendFile(path.join(__dirname + '/StartPage.html'));
+})
 
-app.get('/api/students/:studentId',
+
+
+
+app.get('/Test/id/:Id',
 	function (req, res) {
-		if (req.params.studentId == 1234) {
+		if (req.params.Id == 1) {
 
 			var i2cBus = require("i2c-bus");
 			var Pca9685Driver = require("pca9685").Pca9685Driver;
@@ -114,7 +120,7 @@ app.get('/api/students/:studentId',
 
 		}
 		else {
-			res.sendFile(path.join(__dirname + '/StartPage.html'));
+			res.send('Falsche ID')
 		}
 	}
 )
