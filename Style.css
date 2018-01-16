@@ -1,0 +1,11 @@
+.btn-group-vertical {
+    width: 40%;
+}
+
+.list-group {
+    font-size: 30px;
+}
+
+.alert alert-success alert-dismissable fade show {
+    font-size: 50px;
+}
