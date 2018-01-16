@@ -11,10 +11,6 @@ app.get('/hello', function (req, res) {
 	res.send('Hello World!')
 })
 
-app.get('/Test/Home', function(req, res) {
-	res.sendFile(path.join(__dirname + '/StartPage.html'));
-})
-
 
 
 
