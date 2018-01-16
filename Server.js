@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
-app.use(express.static('public'))
+var path = require('path');
+
+app.use(express.static('Public'))
 app.listen(3000, function () {
 	console.log('listening on port 3000')
 })
@@ -16,7 +18,7 @@ app.get('/api/students/:studentId',
 			res.status(404).send('Uuups!')
 		}
 		else {
-			res.send('Hallo');
+			res.sendFile(path.join(__dirname + '/StartPage.html'));
 		}
 	}
 )
