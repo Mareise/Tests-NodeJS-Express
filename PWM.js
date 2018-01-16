@@ -1,21 +1,4 @@
-const express = require('express')
-const app = express()
-var path = require('path');
 
-app.use(express.static('Public'))
-app.listen(3000, function () {
-	console.log('listening on port 3000')
-})
-
-app.get('/hello', function (req, res) {
-	res.send('Hello World!')
-})
-
-
-app.get('/api/students/:studentId',
-	function (req, res) {
-		if (req.params.studentId == 1234) {
-			
 var i2cBus = require("i2c-bus");
 var Pca9685Driver = require("pca9685").Pca9685Driver;
 var http = require('http');
@@ -109,10 +92,3 @@ pwm = new Pca9685Driver(options, function (err) {
     // Turn on channel 3 (100% power)
     pwm.channelOn(3);
 });
-
-		}
-		else {
-			res.sendFile(path.join(__dirname + '/StartPage.html'));
-		}
-	}
-)
