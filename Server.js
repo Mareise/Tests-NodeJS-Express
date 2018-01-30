@@ -2,6 +2,8 @@ const express = require('express')
 const app = express()
 var path = require('path');
 
+console.log('Mia san im JS')
+
 app.use(express.static('Public'))
 app.listen(3000, function () {
 	console.log('listening on port 3000')
