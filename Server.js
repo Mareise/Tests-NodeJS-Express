@@ -68,7 +68,7 @@ app.get('/Test/id/:Id',
 
 				// Set the duty cycle to 25% for channel 8
 				console.log("Channel 8  done")
-				pwm.setDutyCycle(8, 0.5);
+				pwm.setDutyCycle(8, 0);
 
 				// Turn on channel 3 (100% power)
 				pwm.channelOn(3);
