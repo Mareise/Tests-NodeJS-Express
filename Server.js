@@ -16,7 +16,7 @@ app.get('/hello', function (req, res) {
 
 app.get('/Test/id/:Id',
 	function (req, res) {
-		if (req.params.Id > 0) {
+		if (req.params.Id == 1) {
 
 			var i2cBus = require("i2c-bus");
 			var Pca9685Driver = require("pca9685").Pca9685Driver;
