@@ -16,7 +16,7 @@ app.get('/hello', function (req, res) {
 
 app.get('/Test/id/:Id',
 	function (req, res) {
-		if (req.params.Id == 1) {
+		if (req.params.Id > 0) {
 
 			var i2cBus = require("i2c-bus");
 			var Pca9685Driver = require("pca9685").Pca9685Driver;
@@ -68,7 +68,7 @@ app.get('/Test/id/:Id',
 
 				// Set the duty cycle to 25% for channel 8
 				console.log("Channel 8  done")
-				pwm.setDutyCycle(8, 0);
+				pwm.setDutyCycle(8, req.params.id);
 
 				// Turn on channel 3 (100% power)
 				pwm.channelOn(3);
