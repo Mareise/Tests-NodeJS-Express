@@ -16,7 +16,7 @@ app.get('/hello', function (req, res) {
 
 app.get('/Test/id/:Id',
 	function (req, res) {
-		var dutycicle = parseInt(req.params.Id);
+		var dutycycle = parseInt(req.params.Id);
 		
 		if (req.params.Id > 0) {
 
@@ -70,7 +70,7 @@ app.get('/Test/id/:Id',
 
 				// Set the duty cycle to 25% for channel 8
 				console.log("Channel 8  done")
-				pwm.setDutyCycle(8, dutycicle);
+				pwm.setDutyCycle(8, 50);
 
 				// Turn on channel 3 (100% power)
 				pwm.channelOn(3);
