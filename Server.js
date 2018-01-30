@@ -17,7 +17,7 @@ app.get('/hello', function (req, res) {
 app.get('/Test/id/:Id',
 	function (req, res) {
 		var dutycicle = parseInt(req.params.Id);
-		//var pwm = Number(object);
+		
 		if (req.params.Id > 0) {
 
 			var i2cBus = require("i2c-bus");
