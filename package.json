@@ -1,0 +1,22 @@
+{
+  "name": "tests-nodejs-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mareise/Tests-NodeJS-Express.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mareise/Tests-NodeJS-Express/issues"
+  },
+  "homepage": "https://github.com/Mareise/Tests-NodeJS-Express#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
