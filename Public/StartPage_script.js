@@ -9,6 +9,7 @@ function myFunction() {
         }
     };
 
+    Dutycycle = Dutycycle/100;
     var query = "/Test/id/" + Dutycycle;
     console.log(query);
     xhttp.open("GET", query, true);
