@@ -14,7 +14,7 @@ app.get('/hello', function (req, res) {
 })
 
 
-
+console.log('Mia san weida unten im JS')
 
 app.get('/Test/id/:Id',
 	function (req, res) {
