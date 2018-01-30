@@ -1,9 +1,6 @@
-
 const express = require('express')
 const app = express()
 var path = require('path');
-
-console.log('Mia san im JS')
 
 app.use(express.static('Public'))
 app.listen(3000, function () {
@@ -15,7 +12,7 @@ app.get('/hello', function (req, res) {
 })
 
 
-console.log('Mia san weida unten im JS')
+
 
 app.get('/Test/id/:Id',
 	function (req, res) {
@@ -71,7 +68,7 @@ app.get('/Test/id/:Id',
 
 				// Set the duty cycle to 25% for channel 8
 				console.log("Channel 8  done")
-				pwm.setDutyCycle(8, 50);
+				pwm.setDutyCycle(8, 0);
 
 				// Turn on channel 3 (100% power)
 				pwm.channelOn(3);

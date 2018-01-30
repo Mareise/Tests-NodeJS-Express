@@ -6,7 +6,7 @@ function myFunction() {
             document.getElementById("demo").innerHTML = this.responseText;
         }
     };
-
-    xhttp.open("GET", "/Test/id/50", true);
+    
+    xhttp.open("GET", "/Test/id/1", true);
     xhttp.send();
 }
