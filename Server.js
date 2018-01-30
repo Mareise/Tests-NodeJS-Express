@@ -17,6 +17,7 @@ app.get('/hello', function (req, res) {
 app.get('/Test/id/:Id',
 	function (req, res) {
 		var pwm = req.params.Id;
+		pwm = parseInt(pwm);
 		if (req.params.Id > 0) {
 
 			var i2cBus = require("i2c-bus");
@@ -69,7 +70,7 @@ app.get('/Test/id/:Id',
 
 				// Set the duty cycle to 25% for channel 8
 				console.log("Channel 8  done")
-				pwm.setDutyCycle(8, req.params.Id);
+				pwm.setDutyCycle(8, pwm);
 
 				// Turn on channel 3 (100% power)
 				pwm.channelOn(3);
