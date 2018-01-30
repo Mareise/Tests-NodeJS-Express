@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Mareise/Tests-NodeJS-Express#readme",
   "dependencies": {
     "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "ws": "3.3.2"
   }
 }
