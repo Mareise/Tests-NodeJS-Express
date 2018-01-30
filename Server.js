@@ -16,9 +16,10 @@ app.get('/hello', function (req, res) {
 
 app.get('/Test/id/:Id',
 	function (req, res) {
+		
 		var dutycycle = parseInt(req.params.Id);
 		console.log(dutycycle);
-		if (dutycycle >= 0) {
+		
 
 			var i2cBus = require("i2c-bus");
 			var Pca9685Driver = require("pca9685").Pca9685Driver;
@@ -39,7 +40,7 @@ app.get('/Test/id/:Id',
 				}).listen(8000);
 			});
 
-			res.send("Dutycycle auf " + dutycycle + " eingestellt")
+			res.send("Dutycycle auf " + dutycycle*100 + " eingestellt")
 
 			var options = {
 				i2c: i2cBus.openSync(1),
@@ -70,16 +71,11 @@ app.get('/Test/id/:Id',
 
 				// Set the duty cycle to 25% for channel 8
 				console.log("Channel 8  done")
-				pwm.setDutyCycle(8, dutycycle);
+				pwm.setDutyCycle(8, dutycycle/100);
 
 				// Turn on channel 3 (100% power)
 				pwm.channelOn(3);
 			});
-
-		}
-		else {
-			res.send('Falsche ID')
-		}
 	}
 )
 
