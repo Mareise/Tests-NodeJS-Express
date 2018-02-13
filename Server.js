@@ -28,9 +28,6 @@ app.get('/Test/id/:Id',
 			var http = require('http'),
 				fs = require('fs');
 
-
-			res.send("Dutycycle auf " + dutycycle*100 + " eingestellt")
-
 			var options = {
 				i2c: i2cBus.openSync(1),
 				address: 0x40,
@@ -61,7 +58,7 @@ app.get('/Test/id/:Id',
 				// Set the duty cycle to 25% for channel 8
 				console.log("Channel 8  done")
 				pwm.setDutyCycle(8, dutycycle/100);
-				//res.status(200).send('Success!')
+				res.status(200).send('Success!')
 
 				// Turn on channel 3 (100% power)
 				pwm.channelOn(3);
