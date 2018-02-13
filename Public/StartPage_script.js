@@ -1,7 +1,6 @@
 function myFunction() {
-    console.log("Seas")
     var Dutycycle = document.getElementById("Dutycycle").value;
-    console.log(Dutycycle);
+    console.log("Dutycicle" + Dutycycle);
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
