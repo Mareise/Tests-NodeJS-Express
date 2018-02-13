@@ -3,13 +3,16 @@ function myFunction() {
     console.log("Dutycicle= " + Dutycycle);
     var xhttp = new XMLHttpRequest();
     
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4) {
-	    
-            console.log("Response: "+this.status)
-            document.getElementById("demo").innerHTML = "Success"
+     httpReq.onload = function() {
+        if(this.status==200) {
+            console.log("JUHUUUUUUUUUU")
+            document.getElementById('demo').innerHTML=this.status
+        } else {
+            let errorTxt = 'Error: '+this.status+' ('+this.statusText+')'
+            document.getElementById('demo').innerHTML=errorTxt
+            
         }
-    };
+    }
 
     var query = "/Test/id/" + Dutycycle;
     console.log(query);
