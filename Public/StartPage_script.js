@@ -2,9 +2,11 @@ function myFunction() {
     var Dutycycle = document.getElementById("Dutycycle").value;
     console.log("Dutycicle= " + Dutycycle);
     var xhttp = new XMLHttpRequest();
+    
     xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 || this.status == 200) {
-            console.log("Response: "+this.responseText)
+        if (this.readyState == 4) {
+	    
+            console.log("Response: "+this.status)
             document.getElementById("demo").innerHTML = "Success"
         }
     };
