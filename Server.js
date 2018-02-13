@@ -29,17 +29,6 @@ app.get('/Test/id/:Id',
 				fs = require('fs');
 
 
-			fs.readFile('./LongdrinkPage.html', function (err, html) {
-				if (err) {
-					throw err;
-				}
-				http.createServer(function (request, response) {
-					response.writeHeader(200, { "Content-Type": "text/html" });
-					response.write(html);
-					response.end();
-				}).listen(8000);
-			});
-
 			res.send("Dutycycle auf " + dutycycle*100 + " eingestellt")
 
 			var options = {
@@ -72,7 +61,7 @@ app.get('/Test/id/:Id',
 				// Set the duty cycle to 25% for channel 8
 				console.log("Channel 8  done")
 				pwm.setDutyCycle(8, dutycycle/100);
-				res.status(200).send('Success!')
+				//res.status(200).send('Success!')
 
 				// Turn on channel 3 (100% power)
 				pwm.channelOn(3);
