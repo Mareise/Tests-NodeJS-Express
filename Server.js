@@ -59,7 +59,6 @@ app.get('/Test/id/:Id',
 				console.log("Channel 8  done")
 				pwm.setDutyCycle(8, dutycycle/100);
 				res.status(200).send('Geschafft')
-				console.log(res.status());
 
 				// Turn on channel 3 (100% power)
 				pwm.channelOn(3);
