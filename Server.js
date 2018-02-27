@@ -48,6 +48,7 @@ app.get('/Test/id/:Id',
 
 
 app.get('/Test/richtung/:richtung', function (req, res) {
+	console.log("HALLO"+richtung)
 
 	var richtung = parseInt(req.params.richtung);
 
