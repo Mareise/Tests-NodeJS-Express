@@ -50,9 +50,9 @@ app.get('/Test/id/:Id',
 app.get('/Test/richtung/:richtung', function (req, res) {
 	console.log("HALLO "+richtung)
 
-	var richtung = parseInt(req.query.richtung);
+	var richtung = parseInt(req.params.richtung);
 
-	if (richtung == "links") {
+	if (richtung == "1") { 				
 		pwm.setDutyCycle(9, 0);
 		MotorBeschleunigen(8)
 
@@ -65,7 +65,7 @@ app.get('/Test/richtung/:richtung', function (req, res) {
 
 
 	//-----------------------------------------------------------------
-	if (richtung == "rechts") {
+	if (richtung == "2") {
 		pwm.setDutyCycle(8, 0);
 		MotorBeschleunigen(9)
 
