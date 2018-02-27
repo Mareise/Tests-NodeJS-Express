@@ -69,7 +69,8 @@ function MotorBremsen() {
 function MotorBeschleunigen() {
 
     var i = 20;
-    setTimeout(function () {
+    function myLoop() {
+        setTimeout(function () {
             if (i == 100) {
                 var query = "/Test/id/" + i;
                 console.log(i)
