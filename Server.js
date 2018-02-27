@@ -88,7 +88,7 @@ function MotorBremsen(kanal) {
 			if (i == 20) {
 				dutycycle = 0;
 				console.log(0)
-				pwm.setDutyCycle(8, dutycycle / 100);
+				pwm.setDutyCycle(kanal, dutycycle / 100);
 				return;
 			}
 			dutycycle = i
@@ -111,7 +111,7 @@ function MotorBeschleunigen(kanal) {
 			if (i == 100) {
 				dutycycle = 100;
 				console.log(100)
-				pwm.setDutyCycle(8, dutycycle / 100);
+				pwm.setDutyCycle(kanal, dutycycle / 100);
 				return;
 			}
 			dutycycle = i
