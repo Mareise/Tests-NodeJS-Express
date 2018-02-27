@@ -33,6 +33,20 @@ pwm = new Pca9685Driver(options, function (err) {
 	console.log("Initialization done");
 })
 
+app.get('/Test/id/:Id',
+	function (req, res) {
+
+		var dutycycle = parseInt(req.params.Id);
+		console.log(dutycycle);
+		console.log("Seas wos geht");
+
+		console.log("Channel 8  done")
+		pwm.setDutyCycle(8, dutycycle / 100);
+		res.status(200).send('Geschafft')
+	});
+
+
+
 app.get('/Test/richtung/:richtung', function (req, res) {
 
 	var richtung = parseInt(req.params.Id);
