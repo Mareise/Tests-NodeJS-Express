@@ -33,14 +33,77 @@ pwm = new Pca9685Driver(options, function (err) {
 	console.log("Initialization done");
 })
 
-app.get('/Test/id/:Id', function (req, res) {
+app.get('/Test/richtung/:richtung', function (req, res) {
 
-			var dutycycle = parseInt(req.params.Id);
+	var richtung = parseInt(req.params.Id);
 
-			// Set the duty cycle to 25% for channel 8
-			console.log("Channel 8  done with" + dutycycle)
-			pwm.setDutyCycle(8, dutycycle / 100);
-			res.status(200).send('Geschafft')
+	if (richtung == "links") {
+		pwm.setDutyCycle(9, 0);
+		MotorBeschleunigen(8)
+
+		setTimeout(function () {
+			MotorBremsen(8)	                   //  ..  setTimeout()
+		}, 2000)
+
 	}
+
+
+
+	//-----------------------------------------------------------------
+	if (richtung == "rechts") {
+		pwm.setDutyCycle(8, 0);
+		MotorBeschleunigen(9)
+
+		setTimeout(function () {
+			MotorBremsen(9)	                   //  ..  setTimeout()
+		}, 2000)
+
+	}
+}
 )
 
+
+
+function MotorBremsen(kanal) {
+
+	var i = 100;                     //  set your counter to 1
+
+	function myLoop() {           //  create a loop function
+		setTimeout(function () {
+			if (i == 20) {
+				dutycycle = 0;
+				console.log(0)
+				pwm.setDutyCycle(8, dutycycle / 100);
+				return;
+			}
+			dutycycle = i
+			pwm.setDutyCycle(kanal, dutycycle / 100);
+			i--
+			myLoop();             //  ..  again which will trigger another                                 //  ..  setTimeout()
+		}, 10)
+	}
+
+	myLoop();
+}
+
+function MotorBeschleunigen(kanal) {
+
+	var i = 0;                     //  set your counter to 1
+
+	function myLoop() {           //  create a loop function
+		setTimeout(function () {
+			if (i == 100) {
+				dutycycle = 100;
+				console.log(100)
+				pwm.setDutyCycle(8, dutycycle / 100);
+				return;
+			}
+			dutycycle = i
+			pwm.setDutyCycle(kanal, dutycycle / 100);
+			i++
+			myLoop();             //  ..  again which will trigger another                                 //  ..  setTimeout()
+		}, 10)
+	}
+
+	myLoop();
+}
