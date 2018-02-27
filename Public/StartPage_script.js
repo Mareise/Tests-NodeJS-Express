@@ -25,7 +25,7 @@ function myFunction() {
 }
 
 
-function links() {
+function links1() {
     var richtung = 1
     console.log("Richtung = " + richtung);
     var xhttp = new XMLHttpRequest();
