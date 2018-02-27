@@ -49,7 +49,7 @@ app.get('/Test/id/:Id',
 
 app.get('/Test/richtung/:richtung', function (req, res) {
 
-	var richtung = parseInt(req.params.Id);
+	var richtung = parseInt(req.params.richtung);
 
 	if (richtung == "links") {
 		pwm.setDutyCycle(9, 0);

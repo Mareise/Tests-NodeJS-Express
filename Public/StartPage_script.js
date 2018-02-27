@@ -27,7 +27,7 @@ function myFunction() {
 
 function links() {
     var richtung = "links"
-    console.log("Richtung= " + richtung);
+    console.log("Richtung = " + richtung);
     var xhttp = new XMLHttpRequest();
 
     var query = "/Test/richtung/" + richtung;
