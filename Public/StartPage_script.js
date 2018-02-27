@@ -26,7 +26,7 @@ function myFunction() {
 
 
 function links() {
-    var richtung = "links"
+    var richtung = "l"
     console.log("Richtung = " + richtung);
     var xhttp = new XMLHttpRequest();
 
@@ -52,7 +52,7 @@ function links() {
 }
 
 function rechts() {
-    var richtung = "rechts"
+    var richtung = "r"
     console.log("Richtung = " + richtung);
     var xhttp = new XMLHttpRequest();
 
