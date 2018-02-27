@@ -59,7 +59,7 @@ app.get('/Test/richtung/:richtung', function (req, res) {
 		setTimeout(function () {
 			MotorBremsen(8)	                   //  ..  setTimeout()
 		}, 2000)
-
+		res.status(200).send('Geschafft')
 	}
 
 
@@ -72,7 +72,7 @@ app.get('/Test/richtung/:richtung', function (req, res) {
 		setTimeout(function () {
 			MotorBremsen(9)	                   //  ..  setTimeout()
 		}, 2000)
-
+		res.status(200).send('Geschafft')
 	}
 }
 )

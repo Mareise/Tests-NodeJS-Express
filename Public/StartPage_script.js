@@ -20,7 +20,6 @@ function myFunction() {
         console.log("Error")
     }
 
-
     xhttp.send();
 }
 
