@@ -106,3 +106,12 @@ function MotorBeschleunigen() {
 
     myLoop();
 }
+
+
+function links() {
+
+}
+
+function rechts() {
+    
+}
