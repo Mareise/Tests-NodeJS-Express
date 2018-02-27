@@ -31,7 +31,7 @@ app.get('/Test/id/:Id',
 			var options = {
 				i2c: i2cBus.openSync(1),
 				address: 0x40,
-				frequency: 50,
+				frequency: 1000,
 				debug: false
 			};
 			console.log("Seas wos geht");
