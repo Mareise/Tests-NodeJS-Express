@@ -24,7 +24,7 @@ function myFunction() {
     xhttp.send();
 }
 
-function Motor() {
+function MotorBremsen() {
     var Dutycycle = document.getElementById("Dutycycle").value;
     console.log("Dutycicle= " + Dutycycle);
     var xhttp = new XMLHttpRequest();
@@ -58,6 +58,42 @@ function Motor() {
             xhttp.open("GET", query, true);
             xhttp.send();                    //  increment the counter                               //  if the counter < 10, call the loop function
             i--;
+            myLoop();             //  ..  again which will trigger another                                 //  ..  setTimeout()
+        }, 10)
+    }
+
+    myLoop();
+}
+
+
+function MotorBeschleunigen() {
+
+    var i = 20;
+    setTimeout(function () {
+            if (i == 100) {
+                var query = "/Test/id/" + i;
+                console.log(i)
+                xhttp.open("GET", query, true);
+                xhttp.send();
+                xhttp.onload = function () {
+                    if (this.status == 200) {
+                        console.log("JUHUUUUUUUUUU")
+                        document.getElementById('demo').innerHTML = this.status
+                    } else {
+                        console.log("buuu")
+                        document.getElementById('demo').innerHTML = "Fehler"
+                    }
+                }
+                xhttp.onerror = function () {
+                    console.log("Error")
+                }
+                return;
+            }
+            var query = "/Test/id/" + i;
+            console.log(i)
+            xhttp.open("GET", query, true);
+            xhttp.send();                    //  increment the counter                               //  if the counter < 10, call the loop function
+            i++;
             myLoop();             //  ..  again which will trigger another                                 //  ..  setTimeout()
         }, 10)
     }
