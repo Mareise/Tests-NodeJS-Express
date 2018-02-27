@@ -93,6 +93,7 @@ function MotorBremsen(kanal) {
 			}
 			dutycycle = i
 			pwm.setDutyCycle(kanal, dutycycle / 100);
+			console.log("Dutycicle: "+ dutycycle + " auf Kanal:" + kanal)
 			i--
 			myLoop();             //  ..  again which will trigger another                                 //  ..  setTimeout()
 		}, 10)
@@ -115,6 +116,7 @@ function MotorBeschleunigen(kanal) {
 			}
 			dutycycle = i
 			pwm.setDutyCycle(kanal, dutycycle / 100);
+			console.log("Dutycicle: "+ dutycycle + " auf Kanal:" + kanal)
 			i++
 			myLoop();             //  ..  again which will trigger another                                 //  ..  setTimeout()
 		}, 10)
