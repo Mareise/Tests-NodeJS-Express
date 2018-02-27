@@ -67,6 +67,9 @@ function MotorBremsen() {
 
 
 function MotorBeschleunigen() {
+    var Dutycycle = document.getElementById("Dutycycle").value;
+    console.log("Dutycicle= " + Dutycycle);
+    var xhttp = new XMLHttpRequest();
 
     var i = 20;
     function myLoop() {
