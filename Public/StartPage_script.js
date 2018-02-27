@@ -42,10 +42,17 @@ function Motor() {
         console.log("Error")
     }
 
+    
+
     for (let i=100;i>=0;i--) {
         var query = "/Test/id/" + i;
         console.log(i)
         xhttp.open("GET", query, true);
+        var delayInMilliseconds = 10000; //1 second
+
+    setTimeout(function() {
         xhttp.send();
+    }, delayInMilliseconds);
+        
     }
 }
