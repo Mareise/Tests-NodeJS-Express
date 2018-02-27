@@ -30,28 +30,15 @@ function Motor() {
     var xhttp = new XMLHttpRequest();
 
 
-
-
-
-    /*for (let i = 100; i >= 0; i--) {
-        var delayInMilliseconds = 3000; //3 second
-        console.log("aöskjdg")
-        setTimeout(function () {
-            var query = "/Test/id/" + i;
-            console.log(i)
-            //xhttp.open("GET", query, true);
-           
-
-            //xhttp.send();
-        }, delayInMilliseconds);
-
-    }*/
-
     var i = 100;                     //  set your counter to 1
 
     function myLoop() {           //  create a loop function
         setTimeout(function () {
             if (i == 20) {
+                var query = "/Test/id/" + 0;
+                console.log(0)
+                xhttp.open("GET", query, true);
+                xhttp.send();
                 xhttp.onload = function () {
                     if (this.status == 200) {
                         console.log("JUHUUUUUUUUUU")
@@ -76,9 +63,4 @@ function Motor() {
     }
 
     myLoop();
-
-var query = "/Test/id/" + 0;
-console.log(0)
-xhttp.open("GET", query, true)
-xhttp.send()
 }
