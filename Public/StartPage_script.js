@@ -23,3 +23,29 @@ function myFunction() {
     
     xhttp.send();
 }
+
+function Motor() {
+    var Dutycycle = document.getElementById("Dutycycle").value;
+    console.log("Dutycicle= " + Dutycycle);
+    var xhttp = new XMLHttpRequest();
+
+     xhttp.onload = function() {
+        if(this.status==200) {
+            console.log("JUHUUUUUUUUUU")
+            document.getElementById('demo').innerHTML=this.status
+        } else {
+            console.log("buuu")
+            document.getElementById('demo').innerHTML="Fehler"
+        }
+    }
+    xhttp.onerror = function () {
+        console.log("Error")
+    }
+
+    for (let i=100;i>=0;i--) {
+        var query = "/Test/id/" + i;
+        console.log(i)
+        xhttp.open("GET", query, true);
+        xhttp.send();
+    }
+}
