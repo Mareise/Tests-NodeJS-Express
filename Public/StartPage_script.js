@@ -51,7 +51,7 @@ function Motor() {
 
     function myLoop() {           //  create a loop function
         setTimeout(function () {
-            if (i == -1) {
+            if (i == 20) {
                 xhttp.onload = function () {
                     if (this.status == 200) {
                         console.log("JUHUUUUUUUUUU")
@@ -72,7 +72,7 @@ function Motor() {
             xhttp.send();                    //  increment the counter                               //  if the counter < 10, call the loop function
             i--;
             myLoop();             //  ..  again which will trigger another                                 //  ..  setTimeout()
-        }, 10)
+        }, 100)
     }
 
     myLoop();
