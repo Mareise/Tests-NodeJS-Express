@@ -66,6 +66,7 @@ function Motor() {
             console.log(i)
             xhttp.open("GET", query, true);
             xhttp.send();                    //  increment the counter                               //  if the counter < 10, call the loop function
+	    i--;
             myLoop();             //  ..  again which will trigger another                                 //  ..  setTimeout()
         }, 10)
     }
