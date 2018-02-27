@@ -25,26 +25,22 @@ var options = {
 	debug: false
 };
 
+pwm = new Pca9685Driver(options, function (err) {
+	if (err) {
+		console.error("Error initializing PCA9685");
+		process.exit(-1);
+	}
+	console.log("Initialization done");
+})
 
-app.get('/Test/id/:Id',
-	function (req, res) {
+app.get('/Test/id/:Id', function (req, res) {
 
-		var dutycycle = parseInt(req.params.Id);
-
-
-
-		pwm = new Pca9685Driver(options, function (err) {
-			if (err) {
-				console.error("Error initializing PCA9685");
-				process.exit(-1);
-			}
-			console.log("Initialization done");
+			var dutycycle = parseInt(req.params.Id);
 
 			// Set the duty cycle to 25% for channel 8
 			console.log("Channel 8  done with" + dutycycle)
 			pwm.setDutyCycle(8, dutycycle / 100);
 			res.status(200).send('Geschafft')
-		});
 	}
 )
 
