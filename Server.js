@@ -130,18 +130,19 @@ app.get('/Test/ablesen/', function (req, res) {
 	var raspi = require('raspi');
 	var RotaryEncoder = require('raspi-rotary-encoder').RotaryEncoder;
 
-	raspi.init(function () {
-		var encoder = new RotaryEncoder({
+	var encoder = new RotaryEncoder({
 			pins: { a: "GPIO17", b: "GPIO18" },
 			pullResistors: { a: "up", b: "up" }
 		});
 
+	raspi.init(function () {
+		
 		encoder.addListener('change', function (evt) {
 			console.log('Count', evt.value);
 			var result = "Count" + evt.value
-			
+			res.status(200).send(result)
 		})
-		res.status(200).send(result)
+		
 	});
 	
 })
