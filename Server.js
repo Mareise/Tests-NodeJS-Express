@@ -138,12 +138,10 @@ var encoder = new RotaryEncoder({
 raspi.init(function () {
 
 	encoder.addListener('change', function (evt) {
+		console.log('Count', evt.value);
+		var result = "Count" + evt.value
 		app.get('/Test/ablesen/', function (req, res) {
 			console.log("Wir sind drinnen")
-			var result
-			console.log('Count', evt.value);
-			result = "Count" + evt.value
-
 			res.status(200).send(result)
 
 		})
