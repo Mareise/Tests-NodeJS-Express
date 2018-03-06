@@ -132,6 +132,7 @@ var encoder = new RotaryEncoder({
 	pins: { a: "GPIO17", b: "GPIO18" },
 	pullResistors: { a: "up", b: "up" }
 });
+var result
 
 
 
@@ -139,7 +140,7 @@ raspi.init(function () {
 
 	encoder.addListener('change', function (evt) {
 		console.log('Count', evt.value);
-		var result = "Count" + evt.value
+		result = "Count" + evt.value
 		app.get('/Test/ablesen/', function (req, res) {
 			console.log("Wir sind drinnen")
 			res.status(200).send(result)
