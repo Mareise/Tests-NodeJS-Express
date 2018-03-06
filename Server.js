@@ -138,7 +138,8 @@ app.get('/Test/ablesen/', function (req, res) {
 
 		encoder.addListener('change', function (evt) {
 			console.log('Count', evt.value);
-			res.status(200).send(evt.value)
+			let result = "Count" + evt.value
+			res.status(200).send(result)
 		})
 	});
 	
