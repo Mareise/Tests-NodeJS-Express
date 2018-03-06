@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Konfiguration</title>
+
+    <link rel="stylesheet" type="text/css" href="Style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrapNew.min.css">
+    <script src="jquery.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrapNew.min.js"></script>
+    <script src="KonfigurationScript.js"></script>
+    <script src="bootstrap-slider.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="KonfigurationStyle.css" />
+    <link rel="stylesheet" href="bootstrap-slider.min.css">
+</head>
+
+<body>
+    <a href="StartPage.html" style="text-decoration: none">
+        <div class="container-fluid">
+            <h1 class="display-1">Konfiguration
+            </h1>
+        </div>
+    </a>
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#cubalibre">Cuba Libre</a></li>
+        <li><a data-toggle="tab" href="#wodkabull">Wodka Bull</a></li>
+        <li><a data-toggle="tab" href="#gintonic">Gin Tonic</a></li>
+    </ul>
+
+<!-- ___________________________________________________________________________________________________________________________________________________________ -->
+
+    <div class="tab-content">
+        <div id="cubalibre" class="tab-pane fade in active">
+            <h2>Cuba Libre</h2>
+            <center>
+                <p>
+                    <div class="row">
+                        <div class="col-sm-6" style="font-size: 30px"> <b>Cola</b> </div>
+                        <div class="col-sm-6"> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1"
+                                data-slider-value="50" data-slider-id="RC" id="ex6" data-slider-tooltip="show" data-provide="slider"
+                                data-slider-handle="square" /> </div>
+                    </div>
+                </p>
+                <p>
+                    <div class="row">
+                        <div class="col-sm-6" style="font-size: 30px"> <b>Rum</b> </div>
+                        <div class="col-sm-6"> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1"
+                                data-slider-value="50" data-slider-id="GC" id="R" data-slider-tooltip="show" data-provide="slider"
+                                data-slider-handle="square" /> </div>
+                    </div>
+                </p>
+                <p>
+                    <div class="row">
+                        <div class="col-sm-6" style="font-size: 30px"> <b>Limettensaft</b> </div>
+                        <div class="col-sm-6"> <input type="text" id="ex8" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1"
+                                data-slider-value="50" data-slider-id="BC" id="R" data-provide="slider" data-slider-handle="square"
+                            /> </div>
+                    </div>
+                </p>
+                <div class="progress">
+                    <div id="ex6SliderVal" class="progress-bar progress-bar-danger" role="progressbar" style="width:40%">
+                        Cola
+                    </div>
+                    <div class="progress-bar progress-bar-success" role="progressbar" style="width:10%">
+                        Rum
+                    </div>
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width:20%">
+                        Limettensaft
+                    </div>
+                </div>
+
+            </center>
+        </div>
+
+<!-- ___________________________________________________________________________________________________________________________________________________________ -->
+
+        <div id="wodkabull" class="tab-pane fade">
+            <h2>Wodka Bull</h2>
+            <center>
+                <p>
+                    <div class="row">
+                        <div class="col-sm-6" style="font-size: 30px"> <b>Wodka</b> </div>
+                        <div class="col-sm-6"> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1"
+                                data-slider-value="50" data-slider-id="RC" id="ex6" data-slider-tooltip="show" data-provide="slider"
+                                data-slider-handle="square" /> </div>
+                    </div>
+                </p>
+                <p>
+                    <div class="row">
+                        <div class="col-sm-6" style="font-size: 30px"> <b>Red Bull</b> </div>
+                        <div class="col-sm-6"> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1"
+                                data-slider-value="50" data-slider-id="GC" id="R" data-slider-tooltip="show" data-provide="slider"
+                                data-slider-handle="square" /> </div>
+                    </div>
+                </p>
+
+                
+                <div class="progress">
+                    <div id="ex6SliderVal" class="progress-bar progress-bar-danger" role="progressbar" style="width:40%">
+                        Wodka
+                    </div>
+                    <div class="progress-bar progress-bar-success" role="progressbar" style="width:10%">
+                        Red Bull
+                    </div>
+                </div>
+
+            </center>
+        </div>
+
+<!-- ___________________________________________________________________________________________________________________________________________________________ -->
+
+        <div id="gintonic" class="tab-pane fade">
+            <h2>Gin Tonic</h2>
+            <center>
+                <p>
+                    <div class="row">
+                        <div class="col-sm-6" style="font-size: 30px"> <b>Gin</b> </div>
+                        <div class="col-sm-6"> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1"
+                                data-slider-value="50" data-slider-id="RC" id="ex6" data-slider-tooltip="show" data-provide="slider"
+                                data-slider-handle="square" /> </div>
+                    </div>
+                </p>
+                <p>
+                    <div class="row">
+                        <div class="col-sm-6" style="font-size: 30px"> <b>Tonic Water</b> </div>
+                        <div class="col-sm-6"> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1"
+                                data-slider-value="50" data-slider-id="GC" id="R" data-slider-tooltip="show" data-provide="slider"
+                                data-slider-handle="square" /> </div>
+                    </div>
+                </p>
+                
+                <div class="progress">
+                    <div id="ex6SliderVal" class="progress-bar progress-bar-danger" role="progressbar" style="width:40%">
+                        Gin
+                    </div>
+                    <div class="progress-bar progress-bar-success" role="progressbar" style="width:10%">
+                        Tonic Water
+                    </div>
+                </div>
+
+            </center>
+        </div>
+
+<!-- ___________________________________________________________________________________________________________________________________________________________ -->
+
+    </div>
+
+
+
+</body>
+
+</html>

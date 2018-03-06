@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<HTML>
+
+<HEAD>
+    <title>Cocktails</title>
+    <meta charset="utf-8">
+    <script src="StartPage_script.js"></script>
+    <link rel="stylesheet" type="text/css" href="Style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="jquery.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap.js"></script>
+</head>
+
+<BODY>
+
+    <a href="StartPage.html" style="text-decoration: none">
+        <div class="container-fluid">
+            <h1 class="display-1">Cocktails
+            </h1>
+        </div>
+    </a>
+
+    <center>
+        <div class="list-group">
+            <a href="#", onclick="myFunction()", class="list-group-item list-group-item-action">Mojito</a>
+            <a href="#" onclick="myFunction()" class="list-group-item list-group-item-action">Long Island Ice Tea</a>
+            <a href="#" onclick="myFunction()" class="list-group-item list-group-item-action">Mai Thai</a>
+            <a href="#" onclick="myFunction_warning()" class="list-group-item list-group-item-action">Caipirinha</a>
+        </div>
+    </center>
+
+    <input id="light" type="checkbox">LED
+
+    <div class="alert alert-success alert-dismissable fade show", role="alert" id="Success" style="display: none">
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">&times;</button>
+        <strong>Die Bestellung wird zubereitet!</strong>
+    </div>
+
+    <div class="alert alert-warning alert-dismissable fade show", role="alert" id="Warning" style="display: none">
+        <button type="button" class="close" data-dismiss="alert" onclick="myFunction_close()">&times;</button>
+        <strong>Warning!</strong> Der Zitronensaft ist fast leer.
+    </div>
+
+    
+
+</body>
+
+</html>
