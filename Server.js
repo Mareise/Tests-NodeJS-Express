@@ -48,11 +48,11 @@ app.get('/Test/id/:Id',
 
 
 app.get('/Test/richtung/:richtung', function (req, res) {
-	console.log("HALLO "+richtung)
+	console.log("HALLO " + richtung)
 
 	var richtung = parseInt(req.params.richtung);
 
-	if (richtung == "1") { 				
+	if (richtung == "1") {
 		pwm.setDutyCycle(9, 0);
 		MotorBeschleunigen(8)
 
@@ -93,7 +93,7 @@ function MotorBremsen(kanal) {
 			}
 			dutycycle = i
 			pwm.setDutyCycle(kanal, dutycycle / 100);
-			console.log("Dutycicle: "+ dutycycle + " auf Kanal:" + kanal)
+			console.log("Dutycicle: " + dutycycle + " auf Kanal:" + kanal)
 			i--
 			myLoop();             //  ..  again which will trigger another                                 //  ..  setTimeout()
 		}, 10)
@@ -116,7 +116,7 @@ function MotorBeschleunigen(kanal) {
 			}
 			dutycycle = i
 			pwm.setDutyCycle(kanal, dutycycle / 100);
-			console.log("Dutycicle: "+ dutycycle + " auf Kanal:" + kanal)
+			console.log("Dutycicle: " + dutycycle + " auf Kanal:" + kanal)
 			i++
 			myLoop();             //  ..  again which will trigger another                                 //  ..  setTimeout()
 		}, 10)
@@ -124,3 +124,21 @@ function MotorBeschleunigen(kanal) {
 
 	myLoop();
 }
+
+app.get('/Test/ablesen/', function (req, res) {
+	console.log("Wir sind drinnen")
+	var raspi = require('raspi');
+	var RotaryEncoder = require('raspi-rotary-encoder').RotaryEncoder;
+
+	raspi.init(function () {
+		var encoder = new RotaryEncoder({
+			pins: { a: "GPIO17", b: "GPIO18" },
+			pullResistors: { a: "up", b: "up" }
+		});
+
+		encoder.addListener('change', function (evt) {
+			console.log('Count', evt.value);
+		})
+	});
+	res.status(200).send('Geschafft')
+})
