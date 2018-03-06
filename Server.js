@@ -125,15 +125,17 @@ function MotorBeschleunigen(kanal) {
 	myLoop();
 }
 
-app.get('/Test/ablesen/', function (req, res) {
-	console.log("Wir sind drinnen")
-	var raspi = require('raspi');
+var raspi = require('raspi');
 	var RotaryEncoder = require('raspi-rotary-encoder').RotaryEncoder;
 
 	var encoder = new RotaryEncoder({
 			pins: { a: "GPIO17", b: "GPIO18" },
 			pullResistors: { a: "up", b: "up" }
 		});
+
+app.get('/Test/ablesen/', function (req, res) {
+	console.log("Wir sind drinnen")
+	
 
 	raspi.init(function () {
 		
