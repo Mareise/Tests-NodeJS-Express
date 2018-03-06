@@ -140,5 +140,5 @@ app.get('/Test/ablesen/', function (req, res) {
 			console.log('Count', evt.value);
 		})
 	});
-	res.status(200).send('Geschafft')
+	res.status(200).send(evt.value)
 })

@@ -84,7 +84,7 @@ function ablesen() {
     xhttp.onload = function () {
         if (this.status == 200) {
             console.log("JUHUUUUUUUUUU")
-            document.getElementById('demo').innerHTML = this.status
+            document.getElementById('demo').innerHTML = this.responseText
         } else {
             console.log("buuu")
             document.getElementById('demo').innerHTML = "Fehler"
