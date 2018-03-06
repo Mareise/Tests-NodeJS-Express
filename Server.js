@@ -133,19 +133,21 @@ var encoder = new RotaryEncoder({
 	pullResistors: { a: "up", b: "up" }
 });
 
-app.get('/Test/ablesen/', function (req, res) {
-	console.log("Wir sind drinnen")
-	var result
 
-	raspi.init(function () {
 
-		encoder.addListener('change', function (evt) {
+raspi.init(function () {
+
+	encoder.addListener('change', function (evt) {
+		app.get('/Test/ablesen/', function (req, res) {
+			console.log("Wir sind drinnen")
+			var result
 			console.log('Count', evt.value);
 			result = "Count" + evt.value
-			
+
+			res.status(200).send(result)
+
 		})
 
-	});
-	res.status(200).send(result)
+	})
 
-})
+});
