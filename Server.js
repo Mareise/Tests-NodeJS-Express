@@ -161,8 +161,8 @@ function MotorBeschleunigen(kanal) {
 
 
 // -------------------------------------------------------------------------
-
-raspi.init(function ablesen() {
+function ablesen() {
+raspi.init(function () {
 	console.log("in init")
 
 	encoder.addListener('change', function (evt) {
@@ -174,3 +174,4 @@ raspi.init(function ablesen() {
 	})
 
 });
+}
