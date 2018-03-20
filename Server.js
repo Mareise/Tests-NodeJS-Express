@@ -94,7 +94,7 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 	var fs = require('fs');
 	var getränkid = parseInt(req.params.getraenk);
 
-	rechts(3000)
+	
 
 	getränkestandort = getränkObj[getränkid].position
 
