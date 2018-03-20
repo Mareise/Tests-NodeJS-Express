@@ -38,7 +38,7 @@ var result
 let getränkObj = [
 	{ id: 0, getränk: "malibu", position: "65" },
 	{ id: 1, getränk: "rum", position: "133" },
-	{ id: 2, getränk: "wodka", position: "200" }
+	{ id: 2, getränk: "wodka", position: "200" },
 	{ id: 3, getränk: "whiskey", position: "262" }
 ];
 let standort = 0
