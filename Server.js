@@ -100,7 +100,7 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 
 	getränkestandort = 180
 
-	for (; ;) {
+	
 		if (getränkestandort < standort) {
 			links(1000)
 		}
@@ -118,8 +118,10 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 					setTimeout(go, 10)
 				}
 			}
-			if (getränkestandort == standort) {
-				keepGoing = false
+			function stop() {
+				if (getränkestandort == standort) {
+					keepGoing = false
+				}
 			}
 
 			/*var timer = setTimeout(function () {
@@ -131,11 +133,11 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 				}
 
 			}, 10000)*/
-			
+
 			MotorBremsen(9)
-			break;
+			
 		}
-	}
+	
 	res.status(200).send('Geschafft')
 
 
