@@ -111,9 +111,18 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 			MotorBeschleunigen(9)
 			console.log("AAAAAAAAAAHHH")
 
+			function go () {
+				console.log(standort)
 
+				if(keepGoing) {
+					setTimeout(go, 10)
+				}
+			}
+			if (getränkestandort == standort) {
+				keepGoing = false
+			}
 
-			var timer = setTimeout(function () {
+			/*var timer = setTimeout(function () {
 				function stop() {
 					if (getränkestandort == standort) {
 						console.log(standort)
@@ -121,7 +130,8 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 					}
 				}
 
-			}, 10000)
+			}, 10000)*/
+			
 			MotorBremsen(9)
 			break;
 		}
