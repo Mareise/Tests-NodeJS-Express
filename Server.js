@@ -110,7 +110,7 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 			pwm.setDutyCycle(8, 0);
 			MotorBeschleunigen(9)
 
-			var timer = setInterval(function () {
+			var timer = setTimeout(function () {
 				
 				if (getränkestandort == standort) {
 					clearInterval(timer);
