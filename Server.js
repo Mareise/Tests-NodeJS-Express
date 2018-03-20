@@ -87,11 +87,11 @@ function rechts(dauer) {
 
 // -------------------------------------------------------------------------	
 
-app.get('/Bartender/getränk/:getränk', function (req, res) {
+app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 	console.log("HALLO " + richtung)
 
 	var fs = require('fs');
-	var getränkid = parseInt(req.params.getränk);
+	var getränkid = parseInt(req.params.getraenk);
 
 	let standort = ablesen()
 

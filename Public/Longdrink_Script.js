@@ -28,7 +28,7 @@ function wodkaorange() {
    
     let xhttp = new XMLHttpRequest();
 
-    let query = "/Bartender/getränk/" + getränkid;
+    let query = "/Bartender/getraenk/" + getränkid;
     console.log(query);
     xhttp.open("GET", query, true);
 
