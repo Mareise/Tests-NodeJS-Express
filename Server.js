@@ -111,6 +111,7 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 			MotorBeschleunigen(9)
 
 			var timer = setTimeout(function () {
+				console.log(standort)
 				
 				if (getränkestandort == standort) {
 					clearTimeout(timer);
