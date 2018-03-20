@@ -106,16 +106,19 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 		}
 
 		if (getränkestandort > standort) {
-			console.log("AAAAAAAAAAHHH")
+			
 			pwm.setDutyCycle(8, 0);
 			MotorBeschleunigen(9)
+			console.log("AAAAAAAAAAHHH")
+
+			if (getränkestandort == standort) {
+					clearTimeout(timer);
+			} 
 
 			var timer = setTimeout(function () {
 				console.log(standort)
 				
-				if (getränkestandort == standort) {
-					clearTimeout(timer);
-				}            
+				           
 			}, 10000)
 			MotorBremsen(9)
 			break;
