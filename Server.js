@@ -91,7 +91,7 @@ app.get('/Bartender/getränk/:getränk', function (req, res) {
 	console.log("HALLO " + richtung)
 
 	var fs = require('fs');
-	var getränkid = parseInt(req.params.getränkid);
+	var getränkid = parseInt(req.params.getränk);
 
 	let standort = ablesen()
 
