@@ -88,7 +88,7 @@ function rechts(dauer) {
 // -------------------------------------------------------------------------	
 
 app.get('/Bartender/getraenk/:getraenk', function (req, res) {
-	console.log("HALLO " + richtung)
+	console.log("HALLO")
 
 	var fs = require('fs');
 	var getränkid = parseInt(req.params.getraenk);
