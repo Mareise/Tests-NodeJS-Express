@@ -94,31 +94,33 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 	var fs = require('fs');
 	var getränkid = parseInt(req.params.getraenk);
 
-	
+
 
 	getränkestandort = getränkObj[getränkid].position
 
 	getränkestandort = 180
 
-	for (;;) {
+	for (; ;) {
 		if (getränkestandort < standort) {
 			links(1000)
 		}
 
 		if (getränkestandort > standort) {
-			
+
 			pwm.setDutyCycle(8, 0);
 			MotorBeschleunigen(9)
 			console.log("AAAAAAAAAAHHH")
 
-			if (getränkestandort == standort) {
-					clearTimeout(timer);
-			} 
+
 
 			var timer = setTimeout(function () {
-				console.log(standort)
-				
-				           
+				function stop() {
+					if (getränkestandort == standort) {
+						console.log(standort)
+						clearTimeout(timer);
+					}
+				}
+
 			}, 10000)
 			MotorBremsen(9)
 			break;
@@ -186,7 +188,7 @@ function MotorBeschleunigen(kanal) {
 raspi.init(function () {
 
 	encoder.addListener('change', function (evt) {
-		
+
 		result = evt.value
 		standort = evt.value
 		console.log('Standort', standort);
