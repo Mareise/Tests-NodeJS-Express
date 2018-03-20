@@ -111,7 +111,7 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 					status = 1
 					break;
 				}
-				
+				break
 			case 1:
 				console.log("status 1")
 				if (getränkestandort < standort) {
@@ -119,6 +119,7 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 					status = 2
 					break
 				}
+				break
 			case 2:
 				console.log("status 2")
 				MotorBremsen(9)
