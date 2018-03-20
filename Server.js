@@ -102,7 +102,7 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 	let status = 0
 
 
-	timer = setInterval(function () {
+	let timer = setInterval(function () {
 		switch (status) {
 			case 0:
 				console.log("status 0")
