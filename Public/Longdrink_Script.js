@@ -27,9 +27,9 @@ function Motor() {
 }
 
 function wodkaorange() {
-    conspole.log("wodkaorange wird hergerichtet")
-    let standort = ablesen()
-    console.log("wodkaorange")
+    console.log("wodkaorange wird hergerichtet")
+    
+   
     let getränkid = 2
    
     let xhttp = new XMLHttpRequest();
