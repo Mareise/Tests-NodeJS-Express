@@ -36,9 +36,9 @@ var encoder = new RotaryEncoder({
 var result
 
 let getränkObj = [
-{id: 0, getränk:"malibu", position:"-88"},
-{id: 1, getränk:"rum", position:"2"},
-{id: 2, getränk:"wodka", position:"98"}
+	{ id: 0, getränk: "malibu", position: "-88" },
+	{ id: 1, getränk: "rum", position: "2" },
+	{ id: 2, getränk: "wodka", position: "98" }
 ];
 
 // --------------------------------------------------------------------------
@@ -162,16 +162,14 @@ function MotorBeschleunigen(kanal) {
 
 // -------------------------------------------------------------------------
 
-raspi.init(function () {
+raspi.init(function ablesen() {
 
 	encoder.addListener('change', function (evt) {
 		console.log('Count', evt.value);
-		result = "Count" + evt.value
-		function ablesen() {
-			console.log("Wir sind drinnen")
-			return result
-		}
+		result = evt.value
 
+		console.log("Wir sind drinnen")
+		return result
 	})
 
 });
