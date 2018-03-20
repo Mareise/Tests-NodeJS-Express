@@ -178,13 +178,12 @@ function MotorBeschleunigen(kanal) {
 // -------------------------------------------------------------------------
 
 raspi.init(function () {
-	console.log("in init")
 
 	encoder.addListener('change', function (evt) {
-		console.log('Count', evt.value);
+		
 		result = evt.value
 		standort = evt.value
-		console.log("Wir sind drinnen")
+		console.log('Count', standort);
 
 	})
 
