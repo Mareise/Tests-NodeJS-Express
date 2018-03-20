@@ -113,7 +113,7 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 			
 			case 1:
 				console.log("status 1")
-				if (getränkestandort > standort) {
+				if (getränkestandort < standort) {
 					console.log("in if")
 					status = 2
 					break
