@@ -95,15 +95,23 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 
 	let standort = ablesen()
 
-	getränkstandort = getränkeObj[getränkid].position
+	getränkstandort = getränkObj[getränkid].position
 
-	if (getränkestandort < standort) {
-		rechts(1000)
-	}
+	for (let i; i < 200; i++) {
+		standort = ablesen();
+		if (getränkestandort < standort) {
+			rechts(1000)
+		}
 
-	if (getränkestandort > standort) {
-		links(1000)
+		if (getränkestandort > standort) {
+			links(1000)
+		}
+
+		if (getränkestandort == standort) {
+			break;
+		}
 	}
+	res.status(200).send('Geschafft')
 
 
 });
@@ -162,16 +170,16 @@ function MotorBeschleunigen(kanal) {
 
 // -------------------------------------------------------------------------
 function ablesen() {
-raspi.init(function () {
-	console.log("in init")
+	raspi.init(function () {
+		console.log("in init")
 
-	encoder.addListener('change', function (evt) {
-		console.log('Count', evt.value);
-		result = evt.value
+		encoder.addListener('change', function (evt) {
+			console.log('Count', evt.value);
+			result = evt.value
 
-		console.log("Wir sind drinnen")
-		return result
-	})
+			console.log("Wir sind drinnen")
+			return result
+		})
 
-});
+	});
 }
