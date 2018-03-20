@@ -110,7 +110,7 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 			MotorBeschleunigen(9)
 
 			var timer = setInterval(function () {
-				MotorBremsen(9)
+				
 				if (getränkestandort == standort) {
 					clearInterval(timer);
 				}            
