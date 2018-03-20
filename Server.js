@@ -118,7 +118,7 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 				}
 			case 2:
 				MotorBremsen(9)
-				status = 0
+				status = 3
 				break;
 		}
 	},100)
