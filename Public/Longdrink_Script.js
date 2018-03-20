@@ -20,12 +20,6 @@ function myFunction_warning() {
 
 };
 
-function Motor() {
-    var dt = require('./myfirstmodule');
-
-    dt.Motor;
-}
-
 function wodkaorange() {
     console.log("wodkaorange wird hergerichtet")
     
