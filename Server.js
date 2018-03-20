@@ -106,7 +106,7 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 		}
 
 		if (getränkestandort > standort) {
-
+			var keepGoing = true;
 			pwm.setDutyCycle(8, 0);
 			MotorBeschleunigen(9)
 			console.log("AAAAAAAAAAHHH")
