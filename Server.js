@@ -99,39 +99,35 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 	getränkestandort = getränkObj[getränkid].position
 
 	getränkestandort = 180
+	let status = 0
+
+
+	timer = setInterval(function() {
+		switch(status) {
+			case 0:
+				pwm.setDutyCycle(8,0)
+				MotorBeschleunigen(9)
+				status = 1
+				break;
+			
+			case 1:
+				if(getränkestandort == standort) {
+					status = 2
+					break
+				}
+			case 2:
+				MotorBremsen(9)
+				status = 0
+				break;
+		}
+	},100)
 
 
 	if (getränkestandort < standort) {
 		links(1000)
 	}
 
-	if (getränkestandort > standort) {
-		var keepGoing = true;
-		var timer
-		pwm.setDutyCycle(8, 0);
-		MotorBeschleunigen(9)
-		console.log("AAAAAAAAAAHHH")
-
-
-		function go() {
-			timer = setTimeout(function () {
-				console.log(standort)
-				go()
-			}, 1000)
-		}
-
-		if (getränkestandort < standort) {
-			stopCount()
-		}
-
-		function stopCount() {
-			clearTimeout(timer)
-		}
-
-		MotorBremsen(9)
-
-	}
-
+	
 	res.status(200).send('Geschafft')
 
 
