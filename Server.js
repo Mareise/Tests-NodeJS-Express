@@ -113,7 +113,7 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 			var timer = setTimeout(function () {
 				
 				if (getränkestandort == standort) {
-					clearInterval(timer);
+					clearTimeout(timer);
 				}            
 			}, 10000)
 			MotorBremsen(9)
