@@ -94,9 +94,9 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 	var fs = require('fs');
 	var getränkid = parseInt(req.params.getraenk);
 
-	
+	rechts(3000)
 
-	//getränkstandort = getränkObj[getränkid].position
+	/*getränkstandort = getränkObj[getränkid].position
 
 	getränkestandort = 100
 
@@ -113,7 +113,7 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 			break;
 		}
 	}
-	res.status(200).send('Geschafft')
+	res.status(200).send('Geschafft')*/
 
 
 });
