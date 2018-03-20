@@ -101,13 +101,12 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 	getränkestandort = 180
 
 	for (;;) {
-
-
 		if (getränkestandort < standort) {
 			links(1000)
 		}
 
 		if (getränkestandort > standort) {
+			console.log("AAAAAAAAAAHHH")
 			pwm.setDutyCycle(8, 0);
 			MotorBeschleunigen(9)
 
@@ -116,7 +115,7 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 				if (getränkestandort == standort) {
 					clearInterval(timer);
 				}            
-			})
+			}, 10000)
 			MotorBremsen(9)
 			break;
 		}
