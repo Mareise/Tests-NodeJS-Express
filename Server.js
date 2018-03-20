@@ -36,9 +36,10 @@ var encoder = new RotaryEncoder({
 var result
 
 let getränkObj = [
-	{ id: 0, getränk: "malibu", position: "-88" },
-	{ id: 1, getränk: "rum", position: "2" },
-	{ id: 2, getränk: "wodka", position: "98" }
+	{ id: 0, getränk: "malibu", position: "65" },
+	{ id: 1, getränk: "rum", position: "133" },
+	{ id: 2, getränk: "wodka", position: "200" }
+	{ id: 3, getränk: "whiskey", position: "262" }
 ];
 let standort = 0
 
@@ -98,39 +99,64 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 
 	getränkestandort = getränkObj[getränkid].position
 
-	getränkestandort = 180
 	let status = 0
 
+	if (getränkestandort > standort) {
 
-	let timer = setInterval(function () {
-		switch (status) {
-			case 0:
-				console.log("status 0")
-				pwm.setDutyCycle(8, 0)
-				if (MotorBeschleunigen(9)) {
-					status = 1
-					break;
-				}
-				break
-			case 1:
-				console.log("status 1")
-				if (getränkestandort < standort) {
-					console.log("in if")
-					status = 2
+		let timer = setInterval(function () {
+			switch (status) {
+				case 0:
+					console.log("status 0")
+					pwm.setDutyCycle(8, 0)
+					if (MotorBeschleunigen(9)) {
+						status = 1
+						break;
+					}
 					break
-				}
-				break
-			case 2:
-				console.log("status 2")
-				MotorBremsen(9)
-				status = 3
-				break;
-		}
-	}, 100)
+				case 1:
+					console.log("status 1")
+					if (getränkestandort < standort) {
+						console.log("in if")
+						status = 2
+						break
+					}
+					break
+				case 2:
+					console.log("status 2")
+					MotorBremsen(9)
+					status = 3
+					break;
+			}
+		}, 100)
+	}
 
 
 	if (getränkestandort < standort) {
-		links(1000)
+		let timer = setInterval(function () {
+			switch (status) {
+				case 0:
+					console.log("status 0")
+					pwm.setDutyCycle(9, 0)
+					if (MotorBeschleunigen(8)) {
+						status = 1
+						break;
+					}
+					break
+				case 1:
+					console.log("status 1")
+					if (getränkestandort < standort) {
+						console.log("in if")
+						status = 2
+						break
+					}
+					break
+				case 2:
+					console.log("status 2")
+					MotorBremsen(8)
+					status = 3
+					break;
+			}
+		}, 100)
 	}
 
 

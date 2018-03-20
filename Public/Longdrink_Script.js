@@ -46,6 +46,58 @@ function wodkaorange() {
     xhttp.send();
 }
 
+function malibu() {
+    console.log("wodkaorange wird hergerichtet")
+    
+   
+    let getränkid = 0
+   
+    let xhttp = new XMLHttpRequest();
+
+    let query = "/Bartender/getraenk/" + getränkid;
+    console.log(query);
+    xhttp.open("GET", query, true);
+
+    xhttp.onload = function () {
+        if (this.status == 200) {
+            console.log("JUHUUUUUUUUUU")
+        } else {
+            console.log("buuu")
+        }
+    }
+    xhttp.onerror = function () {
+        console.log("Error")
+    }
+
+    xhttp.send();
+}
+
+function rum() {
+    console.log("wodkaorange wird hergerichtet")
+    
+   
+    let getränkid = 1
+   
+    let xhttp = new XMLHttpRequest();
+
+    let query = "/Bartender/getraenk/" + getränkid;
+    console.log(query);
+    xhttp.open("GET", query, true);
+
+    xhttp.onload = function () {
+        if (this.status == 200) {
+            console.log("JUHUUUUUUUUUU")
+        } else {
+            console.log("buuu")
+        }
+    }
+    xhttp.onerror = function () {
+        console.log("Error")
+    }
+
+    xhttp.send();
+}
+
 function ablesen() {
     let xhttp = new XMLHttpRequest();
     let query = "/Test/ablesen/";
