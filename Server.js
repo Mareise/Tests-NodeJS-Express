@@ -98,7 +98,7 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 
 	getränkestandort = getränkObj[getränkid].position
 
-	getränkestandort = 100
+	getränkestandort = 180
 
 
 		if (getränkestandort < standort) {
