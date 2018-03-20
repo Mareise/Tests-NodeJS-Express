@@ -105,12 +105,13 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 	timer = setInterval(function () {
 		switch (status) {
 			case 0:
-				pwm.setDutyCycle(8, 0)
-				MotorBeschleunigen(9)
 				console.log("status 0")
-				status = 1
-				break;
-			
+				pwm.setDutyCycle(8, 0)
+				if (MotorBeschleunigen(9)) {
+					status = 1
+					break;
+				}
+				
 			case 1:
 				console.log("status 1")
 				if (getränkestandort < standort) {
@@ -185,6 +186,7 @@ function MotorBeschleunigen(kanal) {
 	}
 
 	myLoop();
+	return true
 }
 
 
