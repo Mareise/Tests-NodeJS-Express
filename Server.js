@@ -108,12 +108,11 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 				pwm.setDutyCycle(8, 0)
 				MotorBeschleunigen(9)
 				setTimeout(function () {
-						                   //  ..  setTimeout()
+					console.log("status 0")
+					status = 1
+					break;                 //  ..  setTimeout()
 				}, 3000)
-				console.log("status 0")
-				status = 1
-				break;
-
+			
 			case 1:
 				console.log("status 1")
 				if (getränkestandort == standort) {
