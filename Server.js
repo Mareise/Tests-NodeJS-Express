@@ -100,6 +100,8 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 
 	getränkestandort = 180
 
+	for (;;) {
+
 
 		if (getränkestandort < standort) {
 			links(1000)
@@ -116,8 +118,9 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 				}            
 			})
 			MotorBremsen(9)
+			break;
 		}
-
+	}
 	res.status(200).send('Geschafft')
 
 
@@ -183,7 +186,7 @@ raspi.init(function () {
 		
 		result = evt.value
 		standort = evt.value
-		console.log('Count', standort);
+		console.log('Standort', standort);
 
 	})
 
