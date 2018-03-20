@@ -62,7 +62,7 @@ app.get('/Test/id/:Id',
 		console.log("Seas wos geht");
 
 		console.log("Channel 8  done")
-		pwm.setDutyCycle(8, dutycycle / 100);
+		pwm.setDutyCycle(9, dutycycle / 100);
 		res.status(200).send('Geschafft')
 	});
 
