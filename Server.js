@@ -110,8 +110,9 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 				setTimeout(function () {
 					console.log("status 0")
 					status = 1
-					break;                 //  ..  setTimeout()
+					                 //  ..  setTimeout()
 				}, 3000)
+				break;
 			
 			case 1:
 				console.log("status 1")
