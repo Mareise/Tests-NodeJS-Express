@@ -102,18 +102,21 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 	let status = 0
 
 
-	timer = setInterval(function() {
-		switch(status) {
+	timer = setInterval(function () {
+		switch (status) {
 			case 0:
-				pwm.setDutyCycle(8,0)
+				pwm.setDutyCycle(8, 0)
 				MotorBeschleunigen(9)
+				setTimeout(function () {
+						                   //  ..  setTimeout()
+				}, 3000)
 				console.log("status 0")
 				status = 1
 				break;
-			
+
 			case 1:
 				console.log("status 1")
-				if(getränkestandort == standort) {
+				if (getränkestandort == standort) {
 					console.log("in if")
 					status = 2
 					break
@@ -124,14 +127,14 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 				status = 3
 				break;
 		}
-	},100)
+	}, 100)
 
 
 	if (getränkestandort < standort) {
 		links(1000)
 	}
 
-	
+
 	res.status(200).send('Geschafft')
 
 
