@@ -100,11 +100,11 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 
 	for (let i; i < 200; i++) {
 		if (getränkestandort < standort) {
-			rechts(1000)
+			links(1000)
 		}
 
 		if (getränkestandort > standort) {
-			links(1000)
+			rechts(1000)
 		}
 
 		if (getränkestandort == standort) {
