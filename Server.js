@@ -96,24 +96,28 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 
 	rechts(3000)
 
-	/*getränkstandort = getränkObj[getränkid].position
+	getränkstandort = getränkObj[getränkid].position
 
 	getränkestandort = 100
 
-	for (;;) {
+
 		if (getränkestandort < standort) {
 			links(1000)
 		}
 
 		if (getränkestandort > standort) {
-			rechts(1000)
+			pwm.setDutyCycle(8, 0);
+			MotorBeschleunigen(9)
+
+			setTimeout(function () {
+				MotorBremsen(9)
+				if (getränkestandort == standort) {
+					break;
+				}            //  ..  setTimeout()
+			})
 		}
 
-		if (getränkestandort == standort) {
-			break;
-		}
-	}
-	res.status(200).send('Geschafft')*/
+	res.status(200).send('Geschafft')
 
 
 });
@@ -180,7 +184,7 @@ raspi.init(function () {
 		result = evt.value
 		standort = evt.value
 		console.log("Wir sind drinnen")
-		
+
 	})
 
 });
