@@ -96,7 +96,7 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 
 	rechts(3000)
 
-	getränkstandort = getränkObj[getränkid].position
+	getränkestandort = getränkObj[getränkid].position
 
 	getränkestandort = 100
 
@@ -109,12 +109,13 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 			pwm.setDutyCycle(8, 0);
 			MotorBeschleunigen(9)
 
-			setTimeout(function () {
+			var timer = setInterval(function () {
 				MotorBremsen(9)
 				if (getränkestandort == standort) {
-					break;
-				}            //  ..  setTimeout()
+					clearInterval(timer);
+				}            
 			})
+			MotorBremsen(9)
 		}
 
 	res.status(200).send('Geschafft')
