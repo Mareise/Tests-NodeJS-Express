@@ -107,6 +107,7 @@ app.get('/Bartender/getraenk/:getraenk', function (req, res) {
 			case 0:
 				pwm.setDutyCycle(8,0)
 				MotorBeschleunigen(9)
+				console.log("yo wos geht")
 				status = 1
 				break;
 			
