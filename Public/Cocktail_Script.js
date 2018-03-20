@@ -1,3 +1,9 @@
+let getränkObj = [
+    { id: 0, getränk: "malibu"},
+    { id: 1, getränk: "rum"},
+    { id: 2, getränk: "wodka"}
+];
+
 function myFunction() {
 
     console.log('Hallo');
