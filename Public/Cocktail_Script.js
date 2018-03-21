@@ -14,8 +14,3 @@ function myFunction_warning() {
 
 };
 
-function Motor() {
-    var dt = require('./myfirstmodule');
-
-    dt.Motor;
-}

@@ -216,8 +216,6 @@ function MotorBeschleunigen(kanal) {
 	return true
 }
 
-
-
 // -------------------------------------------------------------------------
 
 raspi.init(function () {

@@ -1,7 +1,8 @@
 let getränkObj = [
     { id: 0, getränk: "malibu"},
     { id: 1, getränk: "rum"},
-    { id: 2, getränk: "wodka"}
+    { id: 2, getränk: "wodka"},
+    { id: 3, getränk: "whiskey"}
 ];
 
 function myFunction() {
@@ -98,77 +99,28 @@ function rum() {
     xhttp.send();
 }
 
-function ablesen() {
-    let xhttp = new XMLHttpRequest();
-    let query = "/Test/ablesen/";
-    let result
-
-    xhttp.open("GET", query, true)
-    xhttp.onload = function () {
-        if (this.status == 200) {
-            console.log("JUHUUUUUUUUUU")
-            result = this.responseText
-        } else {
-            console.log("buuu")
-            result = this.responseText
-        }
-    }
-    xhttp.onerror = function () {
-        console.log("Error")
-    }
-
-    xhttp.send();
-    return result
-}
-
-function rechts() {
-    let richtung = 2
-    console.log("Richtung = " + richtung);
+function whiskey() {
+    console.log("whiskey wird hergerichtet")
+    
+   
+    let getränkid = 3
+   
     let xhttp = new XMLHttpRequest();
 
-    let query = "/Test/richtung/" + richtung;
+    let query = "/Bartender/getraenk/" + getränkid;
     console.log(query);
     xhttp.open("GET", query, true);
 
     xhttp.onload = function () {
         if (this.status == 200) {
             console.log("JUHUUUUUUUUUU")
-            document.getElementById('demo').innerHTML = this.status
         } else {
             console.log("buuu")
-            document.getElementById('demo').innerHTML = "Fehler"
         }
     }
     xhttp.onerror = function () {
         console.log("Error")
     }
-
-
-    xhttp.send();
-}
-
-function links1() {
-    let richtung = 1
-    console.log("Richtung = " + richtung);
-    let xhttp = new XMLHttpRequest();
-
-    let query = "/Test/richtung/" + richtung;
-    console.log(query);
-    xhttp.open("GET", query, true);
-
-    xhttp.onload = function () {
-        if (this.status == 200) {
-            console.log("JUHUUUUUUUUUU")
-            document.getElementById('demo').innerHTML = this.status
-        } else {
-            console.log("buuu")
-            document.getElementById('demo').innerHTML = "Fehler"
-        }
-    }
-    xhttp.onerror = function () {
-        console.log("Error")
-    }
-
 
     xhttp.send();
 }
